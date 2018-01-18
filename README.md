@@ -1,2 +1,2 @@
 # PyHive
-Python API wrapper for CoinHive's HTTP API
+Python API wrapper for CoinHive's HTTP API.
