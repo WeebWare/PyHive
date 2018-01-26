@@ -24,7 +24,7 @@ class PyHiveClient(object):
         :param dict params: The URL params you want to pass to CoinHive
         """
         params.update(secret=self.secret_key)
-        return requests.get(PyHiveClient.build_url(path), params=params).json()
+        return requests.get(PyHiveClient.build_url(path), params=params, headers=self._headers).json()
 
     def post(self, path, data={}):
         """
@@ -34,7 +34,7 @@ class PyHiveClient(object):
         :param dict data: The data you want to post to CoinHive
         """
         data.update(secret=self.secret_key)
-        return requests.post(PyHiveClient.build_url(path), data=data).json()
+        return requests.post(PyHiveClient.build_url(path), data=data, headers=self._headers).json()
 
     @staticmethod
     def build_url(route):
